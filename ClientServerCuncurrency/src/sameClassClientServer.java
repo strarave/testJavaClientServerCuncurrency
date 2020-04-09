@@ -18,10 +18,11 @@ public class sameClassClientServer {
 
         Thread cli = new Thread(() -> {
             try {
+                Thread.sleep(1000);
                 System.out.println("Client up, connecting...");
                 Socket client = new Socket("127.0.0.1", 7007);
                 System.out.println("Connected. closing");
-            } catch (IOException e) {
+            } catch (IOException | InterruptedException e) {
                 e.printStackTrace();
             }
         });
